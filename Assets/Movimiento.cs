@@ -62,7 +62,7 @@ public class Movimiento : MonoBehaviour
         movement.Normalize();
 
         var targetVel = movement * MaxSpeed;
-        _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, targetVel, _speedSmoother);
+        _rigidbody.velocity = targetVel;
 
         if (Input.GetButton("Jump"))
         {
