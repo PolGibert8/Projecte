@@ -19575,6 +19575,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3567591749628823668, guid: 8006403a9eabeb84f9b8395900ffa25f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5167530894109618698, guid: 8006403a9eabeb84f9b8395900ffa25f, type: 3}
       propertyPath: m_Name
       value: Mesa Redonda_1
