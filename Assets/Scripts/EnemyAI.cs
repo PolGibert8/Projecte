@@ -19,6 +19,8 @@ public class EnemyAI : MonoBehaviour
 
     Transform player;
 
+    Gun gun;
+
     private Rigidbody2D _rigidbody;
 
     private void Start()
@@ -30,6 +32,8 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         _rigidbody = GetComponent<Rigidbody2D>();
+
+        gun = GetComponentInChildren<Gun>();
     }
 
     private void InitFSM()
@@ -45,6 +49,8 @@ public class EnemyAI : MonoBehaviour
             direction = new Vector3(Mathf.Cos(randomAngle), 0.0f, Mathf.Sin(randomAngle));
         });
 
+        brain.SetOnEnter(EState.Attack, () => currentTime = 0.0f);
+
         brain.SetOnStay(EState.Idle, IdleUpdate);
         brain.SetOnStay(EState.Wander, WanderUpdate);
         brain.SetOnStay(EState.Attack, AttackUpdate);
@@ -57,7 +63,7 @@ public class EnemyAI : MonoBehaviour
 
     void IdleUpdate()
     {
-        if (Vector3.Distance(player.position, transform.position) < 4.0f)
+        if (Vector3.Distance(player.position, transform.position) < 6.0f)
         {
             brain.ChangeState(EState.Attack);
         }
@@ -73,7 +79,7 @@ public class EnemyAI : MonoBehaviour
     {
         _rigidbody.velocity = direction;
 
-        if (Vector3.Distance(player.position, transform.position) < 4.0f)
+        if (Vector3.Distance(player.position, transform.position) < 6.0f)
         {
             brain.ChangeState(EState.Attack);
         }
@@ -87,10 +93,16 @@ public class EnemyAI : MonoBehaviour
 
     void AttackUpdate()
     {
+        currentTime += Time.deltaTime;
         direction = (player.position - transform.position).normalized;
         _rigidbody.velocity = direction;
+        if (currentTime >= 2.0f)
+        {
+            gun.Fire();
+            currentTime = 0.0f;
+        }
 
-        if (Vector3.Distance(player.position, transform.position) > 4.0f)
+        if (Vector3.Distance(player.position, transform.position) > 6.0f)
         {
             brain.ChangeState(EState.Idle);
         }
