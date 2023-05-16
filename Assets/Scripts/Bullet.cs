@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     public float Speed = 10;
-    private float damage = 1;
     public GameObject enemy;
 
     

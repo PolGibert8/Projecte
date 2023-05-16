@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
 
     float currentTime;
 
+    public float enemyFireRate = 2.0f;
+
     Vector3 direction;
 
     Transform player;
@@ -96,7 +98,7 @@ public class EnemyAI : MonoBehaviour
         currentTime += Time.deltaTime;
         direction = (player.position - transform.position).normalized;
         _rigidbody.velocity = direction;
-        if (currentTime >= 2.0f)
+        if (currentTime >= enemyFireRate)
         {
             gun.Fire();
             currentTime = 0.0f;

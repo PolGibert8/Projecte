@@ -1,22 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Slider slider;
+    public Gradient ColorGradient;
+    public Image FillArea;
+
+    private HealthSystem health;
+
+    void Awake()
     {
-        
-
-
-
-        
+        health = GetComponentInParent<HealthSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        health.OnHit += SetValue;
+    }
+
+    private void OnDisable()
+    {
+        health.OnHit -= SetValue;
+    }
+
+    void Start()
+    {
+        slider = GetComponent<Slider>();
+        SetValue(1);
+    }
+
+    private void SetValue(float f)
+    {
+        slider.value = f;
+        FillArea.color = ColorGradient.Evaluate(f);
     }
 }
