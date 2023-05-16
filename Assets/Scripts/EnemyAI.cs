@@ -23,6 +23,8 @@ public class EnemyAI : MonoBehaviour
 
     Gun gun;
 
+    Animator animator;
+
     private Rigidbody2D _rigidbody;
 
     private void Start()
@@ -36,6 +38,8 @@ public class EnemyAI : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
 
         gun = GetComponentInChildren<Gun>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void InitFSM()
@@ -65,7 +69,7 @@ public class EnemyAI : MonoBehaviour
 
     void IdleUpdate()
     {
-        if (Vector3.Distance(player.position, transform.position) < 6.0f)
+        if (Vector3.Distance(player.position, transform.position) < 5.0f)
         {
             brain.ChangeState(EState.Attack);
         }
@@ -80,8 +84,24 @@ public class EnemyAI : MonoBehaviour
     void WanderUpdate()
     {
         _rigidbody.velocity = direction;
+        if (direction.x > 0)
+        {
+            animator.SetFloat("H", direction.x);
+        }
+        else if (direction.x < 0)
+        {
+            animator.SetFloat("H", direction.x);
+        }
+        if (direction.y > 0)
+        {
+            animator.SetFloat("V", direction.y);
+        }
+        else if (direction.y < 0)
+        {
+            animator.SetFloat("V", direction.y);
+        }
 
-        if (Vector3.Distance(player.position, transform.position) < 6.0f)
+        if (Vector3.Distance(player.position, transform.position) < 5.0f)
         {
             brain.ChangeState(EState.Attack);
         }
@@ -89,6 +109,8 @@ public class EnemyAI : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > 4.0f)
         {
+            animator.SetFloat("H", 0.0f);
+            animator.SetFloat("V", 0.0f);
             brain.ChangeState(EState.Idle);
         }
     }
@@ -98,14 +120,32 @@ public class EnemyAI : MonoBehaviour
         currentTime += Time.deltaTime;
         direction = (player.position - transform.position).normalized;
         _rigidbody.velocity = direction;
+        if(direction.x > 0)
+        {
+            animator.SetFloat("H", direction.x);
+        }
+        else if(direction.x < 0)
+        {
+            animator.SetFloat("H", direction.x);
+        }
+        if(direction.y > 0)
+        {
+            animator.SetFloat("V", direction.y);
+        }
+        else if(direction.y < 0)
+        {
+            animator.SetFloat("V", direction.y);
+        }
         if (currentTime >= enemyFireRate)
         {
             gun.Fire();
             currentTime = 0.0f;
         }
 
-        if (Vector3.Distance(player.position, transform.position) > 6.0f)
+        if (Vector3.Distance(player.position, transform.position) > 5.0f)
         {
+            animator.SetFloat("H", 0.0f);
+            animator.SetFloat("V", 0.0f);
             brain.ChangeState(EState.Idle);
         }
     }
