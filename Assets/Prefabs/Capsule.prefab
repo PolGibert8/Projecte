@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8911461914978331695}
   - component: {fileID: 440281943481973869}
   - component: {fileID: 6884926986534113846}
-  - component: {fileID: 7968748109030858292}
+  - component: {fileID: 5361761540227499285}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -96,13 +96,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &7968748109030858292
+--- !u!114 &5361761540227499285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4257686083840875770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1029bd361aa406246adfba7e7558b498, type: 3}
+  m_Script: {fileID: 11500000, guid: 0776ca7b2c1a03e4ea219ba90f23d9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: -5
