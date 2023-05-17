@@ -141,15 +141,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2619197882855900810}
   - component: {fileID: 2619197882855900809}
-  - component: {fileID: 2619197882855900805}
   - component: {fileID: 8184682014538918455}
   - component: {fileID: 1535545313795690725}
   - component: {fileID: 2619197882855900811}
   - component: {fileID: 2619197882855900804}
   - component: {fileID: 2619197882855900806}
+  - component: {fileID: -950118225556112096}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,19 +222,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2619197882855900805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619197882855900815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58fd19cb367a4648a3e6ccc31707ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyFireRate: 1
 --- !u!114 &8184682014538918455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +315,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-950118225556112096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619197882855900815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58fd19cb367a4648a3e6ccc31707ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyFireRate: 2
 --- !u!1 &2619197882920339196
 GameObject:
   m_ObjectHideFlags: 0
