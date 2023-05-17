@@ -19664,6 +19664,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2708692839578315402, guid: 807151238624847488b0dd74026b3034, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2708692839578315403, guid: 807151238624847488b0dd74026b3034, type: 3}
       propertyPath: m_RootOrder
       value: 12
