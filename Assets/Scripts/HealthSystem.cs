@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour, IDamageTaker
 {
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private float maxHealth = 100;
 
     public float MaxHealth => maxHealth;
     public float CurrentHealth { get; private set; }
@@ -41,4 +41,6 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         OnDeath?.Invoke();
         Dead = true;
     }
+
+    
 }
