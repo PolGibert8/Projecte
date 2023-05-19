@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5903291513973683683}
   - component: {fileID: 5903291513973683682}
+  - component: {fileID: -1790199353088844031}
+  - component: {fileID: -2804383130213157891}
   - component: {fileID: 1247611558927379646}
   m_Layer: 0
   m_Name: Mesa Redonda_0 1
@@ -85,6 +87,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1790199353088844031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903291513973683681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc258215100cc634989f8d8d34f69f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2804383130213157891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903291513973683681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372c463a82b738c4ab129bff5b3a836f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
 --- !u!61 &1247611558927379646
 BoxCollider2D:
   m_ObjectHideFlags: 0

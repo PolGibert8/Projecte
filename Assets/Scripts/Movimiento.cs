@@ -8,7 +8,7 @@ public class Movimiento : MonoBehaviour
     private Animator anim;
 
     [SerializeField]
-    private float MaxSpeed = 42;
+    public float MaxSpeed = 42;
     // Start is called before the first frame update
 
     [SerializeField]

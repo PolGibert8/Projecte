@@ -1,15 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour, IDamageTaker
+public class ShieldSystem : MonoBehaviour, IDamageTaker
 {
     [SerializeField]
-    private float maxHealth = 3;
+    private float maxShield = 5;
 
-    public float MaxHealth => maxHealth;
+    public float MaxHealth => maxShield;
+    public float CurrentShield { get; private set; }
     public float CurrentHealth { get; private set; }
-
     public bool Dead { get; private set; }
 
     public delegate void OnDeathDelegate();
@@ -20,20 +20,21 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
     protected virtual void Start()
     {
-        CurrentHealth = maxHealth;
+        CurrentShield = 0;
         Dead = false;
     }
 
     public virtual void TakeDamage(float amount)
     {
-        CurrentHealth -= amount;
-
-        OnHit?.Invoke(CurrentHealth / MaxHealth);
-
-        if (CurrentHealth <= 0.0f && !Dead)
+        if (CurrentShield != 0.0f)
         {
-            Die();
+            CurrentShield -= amount;
+            OnHit?.Invoke(CurrentShield / MaxHealth);
         }
+        
+
+
+
     }
 
     protected virtual void Die()
@@ -41,6 +42,4 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         OnDeath?.Invoke();
         Dead = true;
     }
-
-    
 }

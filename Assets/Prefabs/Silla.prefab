@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9020679334805163790}
   - component: {fileID: 9020679334805163793}
   - component: {fileID: 9020679334805163792}
+  - component: {fileID: 3398002331782176645}
+  - component: {fileID: -6160100222250715359}
   - component: {fileID: 9020679334805163791}
   m_Layer: 0
   m_Name: Silla
@@ -112,6 +114,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6728287, y: 0.6851764}
   m_EdgeRadius: 0
+--- !u!114 &3398002331782176645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020679334805163795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc258215100cc634989f8d8d34f69f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6160100222250715359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020679334805163795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372c463a82b738c4ab129bff5b3a836f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!50 &9020679334805163791
 Rigidbody2D:
   serializedVersion: 4
