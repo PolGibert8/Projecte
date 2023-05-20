@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 2708692839578315407}
   - component: {fileID: 2708692839578315406}
   - component: {fileID: 2708692839578315377}
+  - component: {fileID: 345020894833114814}
   - component: {fileID: 2708692839578315376}
   m_Layer: 0
   m_Name: Enemy2
@@ -178,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1489327230, guid: 16147aab5ca400d4d9f126d758fb7d31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -262,6 +263,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &345020894833114814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708692839578315379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfef06b564290bb46b0ff19c5b3a1f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyFireRate: 2
 --- !u!95 &2708692839578315376
 Animator:
   serializedVersion: 5

@@ -21,7 +21,9 @@ public class EnemyAI3 : MonoBehaviour
 
     Transform player;
 
-    Transform enemy;
+    Transform item;
+
+    GameObject[] items;
 
     Gun gun;
 
@@ -37,7 +39,7 @@ public class EnemyAI3 : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        item = GameObject.FindGameObjectWithTag("Item").transform;
 
         _rigidbody = GetComponent<Rigidbody2D>();
 
@@ -121,31 +123,30 @@ public class EnemyAI3 : MonoBehaviour
 
     void AttackUpdate()
     {
-        bool flee = false;
         currentTime += Time.deltaTime;
-        direction = (player.position - transform.position).normalized;
-        if (enemy == null)
+        if (item == null)
         {
-            flee = true;
-            animator.SetBool("Flee", flee);
-            _rigidbody.velocity = -direction;
+            items = GameObject.FindGameObjectsWithTag("Item");
+            for(int i = 0; i < items.Length; i++)
+            {
+                item = items[i].transform;
+            }
         }
         else
         {
-            
-            if (Vector3.Distance(enemy.position, transform.position) < 3.0f)
+            if (Vector3.Distance(item.position, transform.position) < 5.0f)
             {
-                flee = false;
-                animator.SetBool("Flee", flee);
+                direction = (item.position - transform.position).normalized;
                 _rigidbody.velocity = direction;
             }
             else
             {
-                flee = true;
-                animator.SetBool("Flee", flee);
-                _rigidbody.velocity = -direction;
+                direction = (item.position - transform.position).normalized;
+                _rigidbody.velocity = direction;
             }
         }
+        
+        
         
         if (direction.x > 0)
         {

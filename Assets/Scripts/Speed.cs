@@ -12,7 +12,7 @@ public class Speed : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collider2D collision)
     {
         velocity.MaxSpeed *= 2;
         Destroy(gameObject);
