@@ -8,10 +8,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Capsula Lila.prefab
   - component: {fileID: 8956646720699637975}
   - component: {fileID: 142861475043504277}
   - component: {fileID: 2048543569179668571}
   - component: {fileID: 569628221031466386}
+=======
+  - component: {fileID: 8911461914978331695}
+  - component: {fileID: 440281943481973869}
+  - component: {fileID: 6884926986534113846}
+  - component: {fileID: 5361761540227499285}
+>>>>>>> parent of 3ba1d78 (Some changes):Assets/Prefabs/Capsule.prefab
   m_Layer: 0
   m_Name: Capsula Lila
   m_TagString: Item
@@ -86,7 +93,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:Assets/Prefabs/Capsula Lila.prefab
 --- !u!114 &2048543569179668571
+=======
+--- !u!70 &6884926986534113846
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257686083840875770}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
+--- !u!114 &5361761540227499285
+>>>>>>> parent of 3ba1d78 (Some changes):Assets/Prefabs/Capsule.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
